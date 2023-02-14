@@ -33,14 +33,14 @@ export default function ListItem({ story }: { story: Story }) {
             {story.score} point{story.score === 1 ? '' : 's'} by{' '}
             <Link
               className="underline hover:text-slate-900"
-              href={`/user/${story.by}`}
+              href={`/user?id=${story.by}`}
             >
               {story.by}
             </Link>{' '}
             {story.time} ·{' '}
             <Link
               className="underline hover:text-slate-900"
-              href={`/item/${story.id}`}
+              href={`/item?id=${story.id}`}
             >
               {story.descendants} comment{story.descendants === 1 ? '' : 's'}
             </Link>
