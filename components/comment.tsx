@@ -23,7 +23,7 @@ export default function Comment({ comment }: { comment: Comment }) {
           </Link>{' '}
           ·{''} {comment.time}{' '}
           <button onClick={collapseComment} type="button">
-            {hidden ? `[${comment.kids?.length + 1} more]` : '[–]'}
+            {hidden ? `[${(comment.kids?.length ?? 0) + 1} more]` : '[–]'}
           </button>
         </small>
 
