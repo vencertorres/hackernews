@@ -6,6 +6,11 @@
   html {
     @apply text-slate-900;
   }
+
+  nav,
+  main {
+    @apply mx-auto max-w-[50rem];
+  }
 }
 
 @layer utilities {
