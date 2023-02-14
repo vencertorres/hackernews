@@ -18,7 +18,7 @@ export default function ListItem({ story }: { story: Story }) {
         ) : (
           <Link
             className="font-medium visited:text-slate-500 hover:text-slate-500"
-            href={`/item/${story.id}`}
+            href={`/item?id=${story.id}`}
           >
             {story.title}
           </Link>
