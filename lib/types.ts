@@ -23,3 +23,10 @@ export type Comment = {
   dead: boolean
   deleted: boolean
 }
+
+export type User = {
+  about?: string
+  created: number
+  id: string
+  karma: number
+}
