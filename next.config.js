@@ -5,7 +5,7 @@ const nextConfig = {
     return [
       {
         source: '/',
-        destination: '/news?p=1',
+        destination: '/top?p=1',
       },
     ]
   },
