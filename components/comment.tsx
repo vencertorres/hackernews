@@ -28,7 +28,7 @@ export default function Comment({ comment }: { comment: Comment }) {
         </small>
 
         <p
-          className="break-words text-sm data-[hidden=true]:hidden [&_a:hover]:text-slate-500 [&_a]:underline"
+          className="break-words text-sm data-[hidden=true]:hidden [&_*]:whitespace-pre-wrap [&_a:hover]:text-slate-500 [&_a]:underline"
           data-hidden={hidden}
           dangerouslySetInnerHTML={{ __html: comment.text }}
         />
