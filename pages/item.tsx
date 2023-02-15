@@ -62,7 +62,7 @@ export default function ItemPage({
 
         {story.text && (
           <p
-            className="break-words text-sm data-[hidden=true]:hidden [&_a:hover]:text-slate-500 [&_a]:underline"
+            className="space-y-4 break-words text-sm data-[hidden=true]:hidden [&_a:hover]:text-slate-500 [&_a]:underline"
             dangerouslySetInnerHTML={{ __html: story.text }}
           />
         )}
