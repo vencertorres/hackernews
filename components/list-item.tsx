@@ -13,7 +13,7 @@ export default function ListItem({ story }: { story: Story }) {
             >
               {story.title}
             </a>{' '}
-            <small className="text-slate-500">({story.host})</small>
+            <span className="text-sm text-slate-500">({story.host})</span>
           </>
         ) : (
           <Link
@@ -25,7 +25,7 @@ export default function ListItem({ story }: { story: Story }) {
         )}
       </h2>
 
-      <small className="text-slate-500">
+      <p className="text-sm text-slate-500">
         {story.type === 'job' ? (
           <>{story.time}</>
         ) : (
@@ -46,7 +46,7 @@ export default function ListItem({ story }: { story: Story }) {
             </Link>
           </>
         )}
-      </small>
+      </p>
     </article>
   )
 }
