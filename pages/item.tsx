@@ -1,6 +1,6 @@
 import Comment from '@/components/comment'
-import { getComments } from '@/lib/get-comments'
-import { getData } from '@/lib/get-data'
+import { fetchComments } from '@/lib/fetch-comments'
+import { fetchItem } from '@/lib/fetch-item'
 import type { Story } from '@/lib/types'
 import type {
   GetServerSidePropsContext,
@@ -75,14 +75,12 @@ export default function ItemPage({
   )
 }
 
-export const getServerSideProps = async (
-  context: GetServerSidePropsContext
-) => {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
   const id = +context.query.id!
 
   try {
-    const story: Story = await getData(id)
-    const comments = await getComments(story.kids)
+    const story: Story = await fetchItem(id)
+    const comments = await fetchComments(story.kids)
 
     return {
       props: {

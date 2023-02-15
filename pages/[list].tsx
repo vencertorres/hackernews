@@ -1,5 +1,5 @@
 import ListItem from '@/components/list-item'
-import { getStories } from '@/lib/get-stories'
+import { fetchStories } from '@/lib/fetch-stories'
 import type { Story } from '@/lib/types'
 import type {
   GetServerSidePropsContext,
@@ -34,25 +34,23 @@ export default function List({
   )
 }
 
-export const getServerSideProps = async (
-  context: GetServerSidePropsContext
-) => {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
   const list = context.query.list as string
-  const page = +context.query.p! as number
+  const page = +context.query.p! || 1
 
-  const stories: Story[] | undefined = await getStories(list, page)
+  try {
+    const stories: Story[] = await fetchStories(list, page)
 
-  if (!stories) {
+    return {
+      props: {
+        list,
+        page,
+        stories,
+      },
+    }
+  } catch (error) {
     return {
       notFound: true,
     }
-  }
-
-  return {
-    props: {
-      list,
-      page,
-      stories,
-    },
   }
 }

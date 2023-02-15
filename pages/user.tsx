@@ -1,4 +1,4 @@
-import { getUser } from '@/lib/get-user'
+import { fetchUser } from '@/lib/fetch-user'
 import type { User } from '@/lib/types'
 import type { GetServerSidePropsContext } from 'next'
 import Head from 'next/head'
@@ -56,22 +56,20 @@ export default function UserPage({ user }: { user: User }) {
   )
 }
 
-export const getServerSideProps = async (
-  context: GetServerSidePropsContext
-) => {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
   const id = context.query.id as string
 
-  const user: User = await getUser(id)
+  try {
+    const user: User = await fetchUser(id)
 
-  if (!user) {
+    return {
+      props: {
+        user,
+      },
+    }
+  } catch (error) {
     return {
       notFound: true,
     }
-  }
-
-  return {
-    props: {
-      user,
-    },
   }
 }
