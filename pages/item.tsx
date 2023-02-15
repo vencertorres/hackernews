@@ -80,7 +80,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
   try {
     const story: Story = await fetchItem(id)
-    const comments = await fetchComments(story.kids)
+    const comments = await fetchComments(story.kids || [])
 
     return {
       props: {
