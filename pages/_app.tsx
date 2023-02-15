@@ -7,9 +7,13 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={inter.className}>
-      <Navigation />
-      <Component {...pageProps} />
-    </main>
+    <>
+      <div className={inter.className + ' mx-auto max-w-[50rem]'}>
+        <Navigation />
+        <main>
+          <Component {...pageProps} />
+        </main>
+      </div>
+    </>
   )
 }
