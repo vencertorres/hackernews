@@ -19,12 +19,12 @@ export default function List({
         <title>Hacker News</title>
       </Head>
 
-      <div className="space-y-4 p-4">
+      <div className="space-y-4">
         {stories.map((story) => (
           <ListItem key={story.id} story={story} />
         ))}
         <Link
-          className="mt-4 inline-block underline hover:text-gray-500"
+          className="mt-4 inline-block underline underline-offset-2 hover:text-gray-500"
           href={`/${list}?p=${page + 1}`}
         >
           More

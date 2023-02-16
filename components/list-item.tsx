@@ -8,7 +8,7 @@ export default function ListItem({ story }: { story: Story }) {
         {story.url ? (
           <>
             <a
-              className="font-medium visited:text-gray-500 hover:text-gray-500"
+              className="font-medium underline-offset-2 visited:text-gray-500 hover:text-gray-500"
               href={story.url}
             >
               {story.title}
@@ -17,7 +17,7 @@ export default function ListItem({ story }: { story: Story }) {
           </>
         ) : (
           <Link
-            className="font-medium visited:text-gray-500 hover:text-gray-500"
+            className="font-medium underline-offset-2 visited:text-gray-500 hover:text-gray-500"
             href={`/item?id=${story.id}`}
           >
             {story.title}
@@ -32,14 +32,15 @@ export default function ListItem({ story }: { story: Story }) {
           <>
             {story.score} point{story.score === 1 ? '' : 's'} by{' '}
             <Link
-              className="underline hover:text-slate-900"
+              className="underline underline-offset-2 hover:text-gray-900"
               href={`/user?id=${story.by}`}
             >
               {story.by}
             </Link>{' '}
-            {story.time} ·{' '}
+            {story.time}
+            {' · '}
             <Link
-              className="underline hover:text-slate-900"
+              className="underline underline-offset-2 hover:text-gray-900"
               href={`/item?id=${story.id}`}
             >
               {story.descendants} comment{story.descendants === 1 ? '' : 's'}

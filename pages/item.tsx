@@ -21,21 +21,21 @@ export default function ItemPage({
         <title>{title}</title>
       </Head>
 
-      <div className="p-4">
+      <div>
         <h1>
           {story.url ? (
             <>
               <a
-                className="font-medium visited:text-gray-500 hover:text-gray-500"
+                className="font-medium underline-offset-2 visited:text-gray-500 hover:text-gray-500"
                 href={story.url}
               >
                 {story.title}
               </a>{' '}
-              <small className="text-gray-500">({story.host})</small>
+              <p className="text-sm text-gray-500">({story.host})</p>
             </>
           ) : (
             <Link
-              className="font-medium visited:text-gray-500 hover:text-gray-500"
+              className="font-medium underline-offset-2 visited:text-gray-500 hover:text-gray-500"
               href={`/item/${story.id}`}
             >
               {story.title}
@@ -43,33 +43,39 @@ export default function ItemPage({
           )}
         </h1>
 
-        <small className="text-gray-500">
+        <p className="text-sm text-gray-500">
           {story.type === 'job' ? (
             <>{story.time}</>
           ) : (
             <>
               {story.score} point{story.score === 1 ? '' : 's'} by{' '}
               <Link
-                className="underline hover:text-slate-900"
+                className="underline underline-offset-2 hover:text-gray-900"
                 href={`/user?id=${story.by}`}
               >
                 {story.by}
               </Link>{' '}
               {story.time}
+              {' · '}
+              {story.descendants} comment{story.descendants === 1 ? '' : 's'}
             </>
           )}
-        </small>
+        </p>
 
         {story.text && (
           <p
-            className="space-y-4 break-words text-sm data-[hidden=true]:hidden [&_a:hover]:text-gray-500 [&_a]:underline"
+            className="space-y-2 break-words text-sm data-[hidden=true]:hidden [&_a:hover]:text-gray-500 [&_a]:underline"
             dangerouslySetInnerHTML={{ __html: story.text }}
           />
         )}
 
-        {comments.map((comment) => (
-          <Comment key={comment.id} comment={comment} />
-        ))}
+        <hr className="my-4" />
+
+        <section>
+          {comments.map((comment) => (
+            <Comment key={comment.id} comment={comment} />
+          ))}
+        </section>
       </div>
     </>
   )

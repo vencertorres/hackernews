@@ -5,51 +5,45 @@ import Head from 'next/head'
 
 export default function UserPage({ user }: { user: User }) {
   const title = `Profile: ${user.id} · Hacker News`
-
   return (
     <>
       <Head>
         <title>{title}</title>
       </Head>
 
-      <div className="p-4">
-        <h1 className="text-2xl font-medium text-orange-500">{user.id}</h1>
+      <div>
+        <h1 className="text-2xl font-medium text-orange-400">{user.id}</h1>
         <div className="space-y-2 text-sm">
-          <div className="flex gap-4">
-            <span className="text-gray-500">Joined:</span>
-            <span>{user.created}</span>
-          </div>
-          <div className="flex gap-4">
-            <span className="text-gray-500">Karma:</span>
-            <span>{user.karma}</span>
-          </div>
+          <p>Created: {user.created}</p>
+          <p>Karma: {user.karma}</p>
           {user.about && (
-            <div className="flex gap-4">
-              <span className="text-gray-500">About:</span>
-              <p
-                className="break-words [&_p]:mt-4"
-                dangerouslySetInnerHTML={{ __html: user.about }}
-              />
-            </div>
+            <div
+              className="space-y-2 break-words"
+              dangerouslySetInnerHTML={{ __html: user.about }}
+            />
           )}
+
           <a
-            className="block underline hover:text-gray-500"
+            className="inline-block underline underline-offset-2 hover:text-gray-500"
             href={`https://news.ycombinator.com/submitted?id=${user.id}`}
           >
-            Submissions
+            submissions
           </a>
+          {' · '}
           <a
-            className="block underline hover:text-gray-500"
+            className="inline-block underline underline-offset-2 hover:text-gray-500"
             href={`https://news.ycombinator.com/threads?id=${user.id}`}
           >
-            Comments
+            comments
           </a>
+          {' · '}
           <a
-            className="block underline hover:text-gray-500"
+            className="inline-block underline underline-offset-2 hover:text-gray-500"
             href={`https://news.ycombinator.com/favorites?id=${user.id}`}
           >
-            Favorites
+            favorites
           </a>
+          {' · '}
         </div>
       </div>
     </>

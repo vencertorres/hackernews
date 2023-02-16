@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <div className={inter.className + ' mx-auto max-w-[50rem]'}>
         <Navigation />
-        <main>
+        <main className="p-4">
           <Component {...pageProps} />
         </main>
       </div>
