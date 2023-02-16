@@ -26,16 +26,16 @@ export default function ItemPage({
           {story.url ? (
             <>
               <a
-                className="font-medium visited:text-slate-500 hover:text-slate-500"
+                className="font-medium visited:text-gray-500 hover:text-gray-500"
                 href={story.url}
               >
                 {story.title}
               </a>{' '}
-              <small className="text-slate-500">({story.host})</small>
+              <small className="text-gray-500">({story.host})</small>
             </>
           ) : (
             <Link
-              className="font-medium visited:text-slate-500 hover:text-slate-500"
+              className="font-medium visited:text-gray-500 hover:text-gray-500"
               href={`/item/${story.id}`}
             >
               {story.title}
@@ -43,7 +43,7 @@ export default function ItemPage({
           )}
         </h1>
 
-        <small className="text-slate-500">
+        <small className="text-gray-500">
           {story.type === 'job' ? (
             <>{story.time}</>
           ) : (
@@ -62,7 +62,7 @@ export default function ItemPage({
 
         {story.text && (
           <p
-            className="space-y-4 break-words text-sm data-[hidden=true]:hidden [&_a:hover]:text-slate-500 [&_a]:underline"
+            className="space-y-4 break-words text-sm data-[hidden=true]:hidden [&_a:hover]:text-gray-500 [&_a]:underline"
             dangerouslySetInnerHTML={{ __html: story.text }}
           />
         )}

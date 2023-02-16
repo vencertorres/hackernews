@@ -14,7 +14,7 @@ export default function Comment({ comment }: { comment: Comment }) {
   return (
     <div>
       <div className="my-4">
-        <small className="text-slate-500">
+        <small className="text-gray-500">
           <Link
             className="underline hover:text-slate-900"
             href={`/user?id=${comment.by}`}
@@ -28,7 +28,7 @@ export default function Comment({ comment }: { comment: Comment }) {
         </small>
 
         <p
-          className="break-words text-sm data-[hidden=true]:hidden [&_*]:whitespace-pre-wrap [&_a:hover]:text-slate-500 [&_a]:underline"
+          className="break-words text-sm data-[hidden=true]:hidden [&_*]:whitespace-pre-wrap [&_a:hover]:text-gray-500 [&_a]:underline"
           data-hidden={hidden}
           dangerouslySetInnerHTML={{ __html: comment.text }}
         />

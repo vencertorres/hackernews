@@ -10,7 +10,7 @@ export default function Navigation() {
       <span className="mr-auto bg-orange-400 p-1 text-neutral-50">HN</span>
       {Object.keys(lists).map((list) => (
         <Link
-          className="inline-block capitalize underline hover:text-slate-500 data-[active=true]:font-medium data-[active=true]:text-orange-400 data-[active=true]:no-underline"
+          className="inline-block capitalize underline hover:text-gray-500 data-[active=true]:font-medium data-[active=true]:text-orange-400 data-[active=true]:no-underline"
           data-active={router.query.list === list}
           key={list}
           href={`/${list}?p=1`}

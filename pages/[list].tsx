@@ -24,7 +24,7 @@ export default function List({
           <ListItem key={story.id} story={story} />
         ))}
         <Link
-          className="mt-4 inline-block underline hover:text-slate-500"
+          className="mt-4 inline-block underline hover:text-gray-500"
           href={`/${list}?p=${page + 1}`}
         >
           More

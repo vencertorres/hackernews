@@ -8,16 +8,16 @@ export default function ListItem({ story }: { story: Story }) {
         {story.url ? (
           <>
             <a
-              className="font-medium visited:text-slate-500 hover:text-slate-500"
+              className="font-medium visited:text-gray-500 hover:text-gray-500"
               href={story.url}
             >
               {story.title}
             </a>{' '}
-            <span className="text-sm text-slate-500">({story.host})</span>
+            <span className="text-sm text-gray-500">({story.host})</span>
           </>
         ) : (
           <Link
-            className="font-medium visited:text-slate-500 hover:text-slate-500"
+            className="font-medium visited:text-gray-500 hover:text-gray-500"
             href={`/item?id=${story.id}`}
           >
             {story.title}
@@ -25,7 +25,7 @@ export default function ListItem({ story }: { story: Story }) {
         )}
       </h2>
 
-      <p className="text-sm text-slate-500">
+      <p className="text-sm text-gray-500">
         {story.type === 'job' ? (
           <>{story.time}</>
         ) : (
