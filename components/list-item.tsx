@@ -8,16 +8,16 @@ export default function ListItem({ story }: { story: Story }) {
         {story.url ? (
           <>
             <a
-              className="font-medium underline-offset-2 visited:text-gray-500 hover:text-gray-500"
+              className="font-medium visited:text-neutral-400 hover:text-neutral-400"
               href={story.url}
             >
               {story.title}
             </a>{' '}
-            <span className="text-sm text-gray-500">({story.host})</span>
+            <span className="text-sm text-neutral-400">({story.host})</span>
           </>
         ) : (
           <Link
-            className="font-medium underline-offset-2 visited:text-gray-500 hover:text-gray-500"
+            className="font-medium visited:text-neutral-400 hover:text-neutral-400"
             href={`/item?id=${story.id}`}
           >
             {story.title}
@@ -25,14 +25,14 @@ export default function ListItem({ story }: { story: Story }) {
         )}
       </h2>
 
-      <p className="text-sm text-gray-500">
+      <p className="text-sm text-neutral-400">
         {story.type === 'job' ? (
           <>{story.time}</>
         ) : (
           <>
             {story.score} point{story.score === 1 ? '' : 's'} by{' '}
             <Link
-              className="underline underline-offset-2 hover:text-gray-900"
+              className="underline underline-offset-2 hover:text-[#222222] dark:hover:text-neutral-50"
               href={`/user?id=${story.by}`}
             >
               {story.by}
@@ -40,7 +40,7 @@ export default function ListItem({ story }: { story: Story }) {
             {story.time}
             {' · '}
             <Link
-              className="underline underline-offset-2 hover:text-gray-900"
+              className="underline underline-offset-2 hover:text-[#222222] dark:hover:text-neutral-50"
               href={`/item?id=${story.id}`}
             >
               {story.descendants} comment{story.descendants === 1 ? '' : 's'}

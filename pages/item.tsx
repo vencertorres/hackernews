@@ -16,68 +16,73 @@ export default function ItemPage({
   const title = `${story.title} · Hacker News`
 
   return (
-    <>
+    <article>
       <Head>
         <title>{title}</title>
       </Head>
 
-      <div>
-        <h1>
+      <header>
+        <h2>
           {story.url ? (
             <>
               <a
-                className="font-medium underline-offset-2 visited:text-gray-500 hover:text-gray-500"
+                className="font-medium visited:text-neutral-400 hover:text-neutral-400"
                 href={story.url}
               >
                 {story.title}
               </a>{' '}
-              <p className="text-sm text-gray-500">({story.host})</p>
+              <span className="text-sm text-neutral-400">({story.host})</span>
             </>
           ) : (
             <Link
-              className="font-medium underline-offset-2 visited:text-gray-500 hover:text-gray-500"
+              className="font-medium visited:text-neutral-400 hover:text-neutral-400"
               href={`/item/${story.id}`}
             >
               {story.title}
             </Link>
           )}
-        </h1>
+        </h2>
 
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-neutral-400">
           {story.type === 'job' ? (
             <>{story.time}</>
           ) : (
             <>
               {story.score} point{story.score === 1 ? '' : 's'} by{' '}
               <Link
-                className="underline underline-offset-2 hover:text-gray-900"
+                className="underline underline-offset-2 hover:text-neutral-800 dark:hover:text-neutral-50"
                 href={`/user?id=${story.by}`}
               >
                 {story.by}
               </Link>{' '}
               {story.time}
               {' · '}
-              {story.descendants} comment{story.descendants === 1 ? '' : 's'}
+              <Link
+                className="underline underline-offset-2 hover:text-neutral-800 dark:hover:text-neutral-50"
+                href={`/item?id=${story.id}`}
+              >
+                {story.descendants} comment{story.descendants === 1 ? '' : 's'}
+              </Link>
             </>
           )}
         </p>
+      </header>
 
-        {story.text && (
-          <p
-            className="space-y-2 break-words text-sm data-[hidden=true]:hidden [&_a:hover]:text-gray-500 [&_a]:underline"
-            dangerouslySetInnerHTML={{ __html: story.text }}
-          />
-        )}
+      {story.text && (
+        <p
+          className="space-y-2 break-words text-sm data-[hidden=true]:hidden [&_a:hover]:text-neutral-400 [&_a]:underline"
+          dangerouslySetInnerHTML={{ __html: story.text }}
+        />
+      )}
 
-        <hr className="my-4" />
+      <hr className="my-4" />
 
-        <section>
-          {comments.map((comment) => (
-            <Comment key={comment.id} comment={comment} />
-          ))}
-        </section>
-      </div>
-    </>
+      <section>
+        {comments.map((comment) => (
+          <Comment key={comment.id} comment={comment} />
+        ))}
+      </section>
+    </article>
   )
 }
 
