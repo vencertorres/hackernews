@@ -1,4 +1,4 @@
-import ListItem from '@/components/list-item'
+import StoryHeader from '@/components/story-header'
 import { fetchStories } from '@/lib/fetch-stories'
 import type { Story } from '@/lib/types'
 import type {
@@ -14,23 +14,24 @@ export default function List({
   stories,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <>
+    <div className="space-y-4">
       <Head>
         <title>Hacker News</title>
       </Head>
 
-      <div className="space-y-4">
-        {stories.map((story) => (
-          <ListItem key={story.id} story={story} />
-        ))}
-        <Link
-          className="inline-block underline underline-offset-2 hover:text-neutral-400"
-          href={`/${list}?p=${page + 1}`}
-        >
-          More
-        </Link>
-      </div>
-    </>
+      {stories.map((story) => (
+        <article key={story.id}>
+          <StoryHeader story={story} />
+        </article>
+      ))}
+
+      <Link
+        className="inline-block underline underline-offset-2 hover:text-neutral-400"
+        href={`/${list}?p=${page + 1}`}
+      >
+        More
+      </Link>
+    </div>
   )
 }
 

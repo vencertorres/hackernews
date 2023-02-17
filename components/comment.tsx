@@ -1,6 +1,9 @@
 import type { Comment } from '@/lib/types'
-import Link from 'next/link'
+import NextLink from 'next/link'
 import { useState } from 'react'
+import Link from './ui/link'
+import Paragraph from './ui/paragraph'
+import Small from './ui/small'
 
 export default function Comment({ comment }: { comment: Comment }) {
   const [expanded, setExpanded] = useState(true)
@@ -9,13 +12,10 @@ export default function Comment({ comment }: { comment: Comment }) {
 
   return (
     <div className="my-4">
-      <p className="text-sm text-neutral-400">
-        <Link
-          className="underline underline-offset-2 hover:text-neutral-800 dark:hover:text-neutral-50"
-          href={`/user?id=${comment.by}`}
-        >
-          {comment.by}
-        </Link>
+      <Small>
+        <NextLink href={`/user?id=${comment.by}`}>
+          <Link>{comment.by}</Link>
+        </NextLink>
         {' · '}
         {comment.time}{' '}
         <button
@@ -25,14 +25,12 @@ export default function Comment({ comment }: { comment: Comment }) {
         >
           {expanded ? '[–]' : `[${(comment.kids?.length ?? 0) + 1} more]`}
         </button>
-      </p>
+      </Small>
 
       {expanded && (
         <>
-          <p
-            className="space-y-2 break-words text-sm [&_*]:whitespace-pre-wrap [&_a:hover]:text-neutral-400 dark:[&_a:hover]:text-neutral-400 [&_a]:underline [&_a]:underline-offset-2"
-            dangerouslySetInnerHTML={{ __html: comment.text }}
-          />
+          <Paragraph content={comment.text} />
+
           {comment.replies.length > 0 && (
             <ul className="pl-4">
               {comment.replies.map((reply) => (
