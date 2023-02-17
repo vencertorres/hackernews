@@ -1,4 +1,5 @@
 import StoryHeader from '@/components/story-header'
+import Link from '@/components/ui/link'
 import { fetchStories } from '@/lib/fetch-stories'
 import type { Story } from '@/lib/types'
 import type {
@@ -6,7 +7,7 @@ import type {
   InferGetServerSidePropsType,
 } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
+import NextLink from 'next/link'
 
 export default function List({
   list,
@@ -25,12 +26,9 @@ export default function List({
         </article>
       ))}
 
-      <Link
-        className="inline-block underline underline-offset-2 hover:text-neutral-400"
-        href={`/${list}?p=${page + 1}`}
-      >
-        More
-      </Link>
+      <NextLink href={`/${list}?p=${page + 1}`} passHref legacyBehavior>
+        <Link>More</Link>
+      </NextLink>
     </div>
   )
 }
