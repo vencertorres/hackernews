@@ -13,7 +13,7 @@ export default function Comment({ comment }: { comment: Comment }) {
   return (
     <div className="my-4">
       <Small>
-        <NextLink href={`/user?id=${comment.by}`}>
+        <NextLink href={`/user?id=${comment.by}`} passHref legacyBehavior>
           <Link>{comment.by}</Link>
         </NextLink>
         {' · '}

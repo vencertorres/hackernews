@@ -27,12 +27,12 @@ export default function StoryHeader({ story }: { story: Story }) {
         ) : (
           <>
             {story.score} point{story.score === 1 ? '' : 's'} by{' '}
-            <NextLink href={`/user?id=${story.by}`}>
+            <NextLink href={`/user?id=${story.by}`} passHref legacyBehavior>
               <Link>{story.by}</Link>
             </NextLink>{' '}
             {story.time}
             {' · '}
-            <NextLink href={`/item?id=${story.id}`}>
+            <NextLink href={`/item?id=${story.id}`} passHref legacyBehavior>
               <Link>
                 {story.descendants} comment{story.descendants === 1 ? '' : 's'}
               </Link>
