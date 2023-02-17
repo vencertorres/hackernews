@@ -2,8 +2,8 @@ import type { Comment } from '@/lib/types'
 import NextLink from 'next/link'
 import { useState } from 'react'
 import Link from './ui/link'
-import Paragraph from './ui/paragraph'
 import Small from './ui/small'
+import Text from './ui/text'
 
 export default function Comment({ comment }: { comment: Comment }) {
   const [expanded, setExpanded] = useState(true)
@@ -29,7 +29,7 @@ export default function Comment({ comment }: { comment: Comment }) {
 
       {expanded && (
         <>
-          <Paragraph content={comment.text} />
+          <Text content={comment.text} />
 
           {comment.replies.length > 0 && (
             <ul className="pl-4">

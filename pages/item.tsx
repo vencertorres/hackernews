@@ -1,6 +1,6 @@
 import Comment from '@/components/comment'
 import StoryHeader from '@/components/story-header'
-import Paragraph from '@/components/ui/paragraph'
+import Text from '@/components/ui/text'
 import { fetchComments } from '@/lib/fetch-comments'
 import { fetchItem } from '@/lib/fetch-item'
 import type { Story } from '@/lib/types'
@@ -24,7 +24,7 @@ export default function ItemPage({
 
       <StoryHeader story={story} />
 
-      {story.text && <Paragraph content={story.text} />}
+      {story.text && <Text content={story.text} />}
 
       <hr className="my-4" />
 
