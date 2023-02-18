@@ -6,7 +6,6 @@ import type {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
 } from 'next'
-import Head from 'next/head'
 import NextLink from 'next/link'
 
 export default function List({
@@ -16,10 +15,6 @@ export default function List({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <div className="space-y-4">
-      <Head>
-        <title>Hacker News</title>
-      </Head>
-
       {stories.map((story) => (
         <article key={story.id}>
           <StoryHeader story={story} />
