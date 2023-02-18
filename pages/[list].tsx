@@ -27,7 +27,7 @@ export default function List({
       ))}
 
       <NextLink href={`/${list}?p=${page + 1}`} passHref legacyBehavior>
-        <Link>More</Link>
+        <Link>Next &raquo;</Link>
       </NextLink>
     </div>
   )

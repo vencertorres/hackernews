@@ -19,6 +19,7 @@ export default function ThemeSwitch() {
     <button
       className="rounded p-1 hover:bg-neutral-200 dark:hover:text-neutral-800"
       onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
+      aria-label="Theme"
       type="button"
     >
       {icon}
