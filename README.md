@@ -2,9 +2,6 @@
 
 A [Hacker News](https://news.ycombinator.com/) clone built with [Next.js](https://nextjs.org/) + [Tailwind CSS](https://tailwindcss.com/)
 
-![](/light.png 'Light mode')
-![](/dark.png 'Dark mode')
-
 ## Build setup
 
 ```bash
