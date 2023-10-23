@@ -20,6 +20,7 @@ export interface Comment {
   replies: Comment[];
   text: string;
   time: number;
+  time_ago: number;
   type: "comment";
   dead: boolean;
   deleted: boolean;

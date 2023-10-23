@@ -1,5 +1,5 @@
 import { Story } from "@/lib/types";
-import { pluralize } from "@/lib/utils";
+import { getDomain, pluralize } from "@/lib/utils";
 import { formatDistanceToNowStrict, fromUnixTime } from "date-fns";
 import Link from "next/link";
 
@@ -23,7 +23,7 @@ async function getStories(params: {
       return {
         ...story,
         time_ago: formatDistanceToNowStrict(fromUnixTime(story.time)) + " ago",
-        domain: story.url ? new URL(story.url).host.replace(/^www\./, "") : "",
+        domain: getDomain(story.url),
       };
     }),
   );
@@ -38,6 +38,8 @@ export default async function Page({
 
   return (
     <div className="space-y-4">
+      <h1 className="sr-only">Hacker News</h1>
+
       {stories.map((story) => (
         <article key={story.id}>
           {story.url ? (
