@@ -1,0 +1,38 @@
+.story {
+  position: relative;
+  margin: 0 0 2em 1em;
+}
+
+.heading {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.heading a {
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.domain {
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: var(--fg-light);
+}
+
+.meta {
+  color: var(--fg-light);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.meta a {
+  color: inherit;
+}
+
+.index {
+  position: absolute;
+  top: 0;
+  left: -2em;
+  text-align: right;
+  width: 1em;
+}

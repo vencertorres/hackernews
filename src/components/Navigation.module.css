@@ -1,0 +1,27 @@
+.nav {
+  padding: 0 2em;
+  border-bottom: 1px solid #d6d3d1;
+}
+
+.list {
+  max-width: var(--max-width);
+  padding-left: 0;
+  margin: 0 auto;
+}
+
+.listItem {
+  display: inline-block;
+}
+
+.link {
+  display: inline-block;
+  padding: 1em 0.5em;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.active {
+  composes: link;
+  color: var(--accent);
+  border-bottom: 3px solid var(--accent);
+}

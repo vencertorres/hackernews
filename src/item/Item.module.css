@@ -1,0 +1,24 @@
+.item {
+  border-bottom: 1em solid #d6d3d1;
+  padding: 0 2em 2em 2em;
+  margin: 0 -2em 2em -2em;
+}
+
+.heading {
+  color: var(--fg);
+  font-weight: 500;
+}
+
+.heading a {
+  text-decoration: none;
+}
+
+.domain {
+  font-weight: 400;
+  color: var(--fg-light);
+}
+
+.meta {
+  color: var(--fg-light);
+  font-size: 0.875rem;
+}

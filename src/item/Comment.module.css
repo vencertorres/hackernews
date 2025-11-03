@@ -1,0 +1,20 @@
+.meta {
+  color: var(--fg-light);
+  font-size: 0.875rem;
+}
+
+.button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: var(--fg);
+}
+
+.comments {
+  padding-left: 20px;
+  border-left: 1px solid #d6d3d1;
+}
