@@ -1,14 +1,14 @@
-import { Redirect, Route, Router, Switch } from "wouter";
+import { Redirect, Route, Switch } from "wouter";
+import "./App.css";
 import ErrorPage from "./components/Error";
 import Navigation from "./components/Navigation";
 import Item from "./item/Item";
 import Stories from "./stories/Stories";
 import User from "./user/User";
-import "./App.css";
 
 export default function App() {
   return (
-    <Router base="/hackernews">
+    <>
       <Navigation />
 
       <main>
@@ -30,6 +30,6 @@ export default function App() {
           </Route>
         </Switch>
       </main>
-    </Router>
+    </>
   );
 }
