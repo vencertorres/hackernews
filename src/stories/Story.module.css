@@ -1,6 +1,7 @@
 .story {
   position: relative;
-  margin: 0 0 2em 1em;
+  padding: 0 0 0 1.5em;
+  margin: 0 0 2em 0;
 }
 
 .heading {
@@ -32,7 +33,6 @@
 .index {
   position: absolute;
   top: 0;
-  left: -2em;
+  left: -1em;
   text-align: right;
-  width: 1em;
 }
