@@ -13,6 +13,7 @@ body {
   background-color: var(--bg);
   color: var(--fg);
   font-size: 14px;
+  overflow-wrap: break-word;
 }
 
 h1 {

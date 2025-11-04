@@ -3,3 +3,11 @@ main {
   max-width: var(--max-width);
   margin: 0 auto;
 }
+
+pre {
+  overflow: auto;
+}
+
+code {
+  font-size: 0.7rem;
+}
