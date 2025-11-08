@@ -1,6 +1,6 @@
 import Error from "../components/Error";
 import Spinner from "../components/Spinner";
-import useFetch from "../hooks/useFetch";
+import useFetch from "../hooks/use-fetch";
 import styles from "./User.module.css";
 
 interface User {

@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import Error from "../components/Error";
 import Spinner from "../components/Spinner";
-import useFetch from "../hooks/useFetch";
+import useFetch from "../hooks/use-fetch";
 import Comment from "./Comment";
 import styles from "./Item.module.css";
 

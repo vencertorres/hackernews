@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import Error from "../components/Error";
-import useFetch from "../hooks/useFetch";
+import useFetch from "../hooks/use-fetch";
 import Story from "./Story";
 import Spinner from "../components/Spinner";
 
