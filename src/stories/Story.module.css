@@ -5,7 +5,7 @@
 }
 
 .heading {
-  font-size: 1rem;
+  font-size: 1em;
   font-weight: 400;
 }
 
@@ -16,13 +16,13 @@
 
 .domain {
   font-weight: 400;
-  font-size: 0.875rem;
+  font-size: 0.875em;
   color: var(--fg-light);
 }
 
 .meta {
   color: var(--fg-light);
-  font-size: 0.875rem;
+  font-size: 0.875em;
   margin: 0;
 }
 
